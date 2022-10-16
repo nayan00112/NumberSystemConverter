@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number System Converter</title>
+</head>
+
+<body>
+
+    <form method="post" action="">
+        {% csrf_token %}
+        <caption><h1>Number System Converter</h1></caption>
+        <label for="InputNum" required>Enter Number:</label>
+        <input type="text" id="InputNum" name="InputNumber">
+
+
+        <ul>
+            <label for="selectNumSys">Number System:</label>
+            <li><input type="radio" name="nsys" id="selectNumSys" required value="Decimal">Decimal</li>
+            <li><input type="radio" name="nsys" id="selectNumSys" required value="Binary">Binary</li>
+            <li><input type="radio" name="nsys" id="selectNumSys" required value="Octal">Octal</li>
+            <li><input type="radio" name="nsys" id="selectNumSys" required value="Hexadecimal">Hexadecimal</li>
+        </ul>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    
+    {% if decValue %}
+    Decimal: {{decValue}}<br>
+    {% endif %}
+    {% if binaryValue %}
+    Binary :{{binaryValue}}<br>
+    {% endif %}
+    {% if octValue %}
+    Octal: {{octValue}}<br>
+    {% endif %}
+    {% if hexValue %}
+    Hexadecimal Number: {{hexValue}}<br>
+    {% endif %}
+    {% if error %}
+    Error: {{error}}
+    {% endif %}
+    <br>
+    
+
+</body>
+
+</html>
